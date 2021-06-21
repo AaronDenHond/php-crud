@@ -3,28 +3,28 @@
 class Student
 {
     //properties
-    private int $id;
+    private int $studentId;
     private string $name;
     private string $email;
-    private int  $classID;
-    private string $teacher;
+    private int $classId;
+    
 
     //constructor
-    public function __construct($ide, $namee, $emaile, $classIDe, $teachere)
+    public function __construct($studentId, $namee, $emaile, $classIde)
     {
-        $this->id = $ide;
+        $this->id = $studentId;
         $this->name = $namee;
         $this->email = $emaile;
-        $this->classID = $classIDe;
-        $this->teacher = $teachere;
+        $this->classId = $classIde;
+        
     }
 
 
 
     // getters 
-    public function getID()
+    public function getStudentId()
     {
-        return $this->id;
+        return $this->studentId;
     }
 
 
@@ -38,15 +38,11 @@ class Student
         return $this->email;
     }
 
-    public function getclassID()
+    public function getclassId()
     {
-        return $this->classID;
+        return $this->classId;
     }
 
-    public function getTeacher()
-    {
-        return $this->teacher;
-    }
-
+   
 
 }

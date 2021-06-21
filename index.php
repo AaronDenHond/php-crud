@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 
 //include all your model files here
 require 'Model/User.php';
+require 'Model/Database.php';
 //include all your controllers here
 require 'Controller/HomepageController.php';
 require 'Controller/InfoController.php';

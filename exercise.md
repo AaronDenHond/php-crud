@@ -55,7 +55,7 @@ On the detailed overview you have to provide the following information:
 #### Teacher
 - Name
 - Email
-- List of all students currently assigned to him (clickable link)
+- List of all students currently assigned to him (clickable link) relation via class!
  
 #### Class 
 - Name class (Giertz, Lamarr, ...)
