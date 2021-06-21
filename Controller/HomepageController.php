@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 class HomepageController
 {
@@ -7,7 +8,8 @@ class HomepageController
     public function render(array $GET, array $POST)
     {
         //this is just example code, you can remove the line below
-        $user = new User('John Smith');
+        $studentOne = new StudentLoader();
+        $studentTest = $studentOne->getStudentById(1);
 
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.

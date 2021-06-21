@@ -16,3 +16,7 @@ IN PROGRESS
 4. connect to database
 
 5. store some data
+
+
+person class teacher extends person
+             student extends person
