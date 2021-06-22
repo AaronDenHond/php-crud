@@ -8,9 +8,9 @@ class Teacher extends Person
     
 
     //constructor
-    public function __construct($Name, $Email, $Id)
+    public function __construct(string $Name, string $Email, int $Id)
     {
-        parent::__construct($Name, $Email, $Id);
+        parent::__construct( $Name,  $Email,  $Id);
         
     }
 

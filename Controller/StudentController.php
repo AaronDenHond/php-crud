@@ -7,7 +7,7 @@ class StudentController {
         //studentArray is an array filled with objects     
         $studentArray = new StudentLoader();
         $studentOne = $studentArray->getStudentById(1);
-        var_dump($studentOne);
+        $allStudents = $studentArray->getAllStudents();
         
         require 'View/studentpage.php';
 

@@ -11,7 +11,9 @@ class CampusClassController
 
         $classArray = new CampusClassLoader();
         $classOne = $classArray->getCampusClassById(1);
-        var_dump($classOne);
+        $allClasses = $classArray->getAllCampusClasses();
+        
+        
        
         
 

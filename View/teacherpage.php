@@ -1,9 +1,22 @@
-<?php require 'includes/header.php'?>
-    <section>
-        <h4>Teacher Page</h4>
+<?php require 'includes/header.php' ?>
+<section>
+    <h4>Teacher Page</h4>
 
-        <p><a href="index.php">Back to homepage</a></p>
-         <?php echo var_dump($teacherOne) ;?>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus commodi dolores, eum ex, excepturi minus modi nostrum officia perspiciatis quaerat quam quas quia quibusdam quis, quo ratione rem saepe sed!</p>
-    </section>
-<?php require 'includes/footer.php'?>
+    <p><a href="index.php">Back to homepage</a></p>
+
+
+    <?php foreach ($allTeachers as $teacher) {
+        echo '<tr>';
+        echo '<td>' . $teacher->getId() . '</td>';
+        echo '<br>';
+        echo '<td>' . $teacher->getName() . '</td>';
+        echo '<br>';
+        echo '<td>' . $teacher->getEmail() . '</td>';
+        echo '</tr>';
+        echo '<br>';
+        echo '<br>';
+    }
+    ?>
+
+</section>
+<?php require 'includes/footer.php' ?>

@@ -15,7 +15,7 @@ class StudentLoader
         $queriedAllStudents = $handle->fetchAll();
 
         foreach ($queriedAllStudents as $student) {
-            array_push($this->allStudents, new Student((int)$student['name'], (string)$student['email'], (string)$student['studentId'], (int)$student['classId']));
+            array_push($this->allStudents, new Student((string)$student['name'], (string)$student['email'], (string)$student['studentId'], (int)$student['classId']));
             //$this->allStudents[] = new Student( (int)$student['name'], (string)$student['email'], (string)$student['studentId'], (int)$student['classId']);  
         }
         // [] is js .push   array_push($this->allStudents, new Student((int)$student['name'], (string)$student['email'], (string)$student['studentId'], (int)$student['classId']))

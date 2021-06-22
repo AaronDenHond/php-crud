@@ -11,7 +11,8 @@ class TeacherController
 
         $teacherArray = new TeacherLoader();
         $teacherOne = $teacherArray->getTeacherById(1);
-        var_dump($teacherOne);
+        $allTeachers = $teacherArray->getAllTeachers();
+        
 
         
 
