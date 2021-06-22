@@ -18,7 +18,7 @@ require 'Model/CampusClassLoader.php';
 //include all your controllers here
 require 'Controller/HomepageController.php';
 require 'Controller/InfoController.php';
-require 'Controller/StudentTestController.php';
+require 'Controller/StudentController.php';
 
 //you could write a simple IF here based on some $_GET or $_POST vars, to choose your controller
 //this file should never be more than 20 lines of code!
@@ -30,3 +30,8 @@ if(isset($_GET['page']) && $_GET['page'] === 'info') {
 
 
 $controller->render($_GET, $_POST);
+
+
+
+//overview voor general info alle 3
+//detailed per page

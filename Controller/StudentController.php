@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class StudentTestController {
+class StudentController {
 
     public function render(array $GET, array $POST) {
           $studentOne = new StudentLoader();

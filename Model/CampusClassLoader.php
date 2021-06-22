@@ -1,8 +1,8 @@
 <?php
 
-class ClassLoader {
+class CampusClassLoader {
 
-    private array $allCampusClasses;
+    private array $allCampusClasses = [];
 
 
 public function __construct() {
@@ -14,24 +14,24 @@ public function __construct() {
 
     foreach($queriedAllCampusClasses as $campusClass) {
 
-        $this->allCampusClasses = new campusClass( $campusClass['classId'], $campusClass['className'], $campusClass['location'], $campusClass['teacherId']); 
+        array_push($this->allCampusClasses, new CampusClass( (int)$campusClass['classId'], $campusClass['className'], $campusClass['location'], (int)$campusClass['teacherId'])); 
     }
 
 }
-//getter for all students
-public function getAllStudents() {
+//getter for all class
+public function getAllCampusClasses() {
 
-    return $this->allStudents;
+    return $this->allCampusClasses;
 }
 
-//getter for all data 1 student by searching by id
+//getter for all data 1 class by searching by id
 
-public function getStudentById($studentId) {
+public function getCampusClassById($id) {
 
-    foreach($this->allStudents as $student) {
-        if ($student->getStudentId() === $studentId ) {
+    foreach($this->allCampusClasses as $campusClass) {
+        if ($campusClass->getClassId() === $id ) {
 
-            return $student;
+            return $campusClass;
         }
     }
 }

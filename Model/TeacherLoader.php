@@ -2,7 +2,7 @@
 
 class TeacherLoader {
 
-    private array $allTeachers;
+    private array $allTeachers = [];
 
 
 public function __construct() {
@@ -14,7 +14,7 @@ public function __construct() {
 
     foreach($queriedAllTeachers as $teacher) {
 
-        $this->allTeachers = new Teacher( $teacher['teacherId'], $teacher['name'], $teacher['email']); 
+        array_push($this->allTeachers,new Teacher( $teacher['name'], $teacher['email'], $teacher['teacherId'])); 
     }
 
 }
@@ -29,7 +29,7 @@ public function getAllTeachers() {
 public function getTeacherById($teacherId) {
 
     foreach($this->allTeachers as $teacher) {
-        if ($teacher->getStudentId() === $teacherId ) {
+        if ($teacher->getId() === $teacherId ) {
 
             return $teacher;
         }
