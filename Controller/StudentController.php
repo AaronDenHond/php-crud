@@ -4,12 +4,16 @@ declare(strict_types=1);
 class StudentController {
 
     public function render(array $GET, array $POST) {
-          $studentOne = new StudentLoader();
-          $studentTest = $studentOne->getStudentById(1);
+        //studentArray is an array filled with objects     
+        $studentArray = new StudentLoader();
+        $studentOne = $studentArray->getStudentById(1);
+        var_dump($studentOne);
+        
+        require 'View/studentpage.php';
 
     }
 
 }
 
 
-require 'View/homepage.php';
+

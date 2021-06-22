@@ -1,31 +1,23 @@
 <?php
 declare(strict_types = 1);
 
-class InfoController
+class TeacherController
 {
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render(array $GET, array $POST)
     {
 
-        //studentOne is an array filled with objects     
-        $studentArray = new StudentLoader();
-        $studentOne = $studentArray->getStudentById(1);
-        var_dump($studentOne);
+        
 
         $teacherArray = new TeacherLoader();
         $teacherOne = $teacherArray->getTeacherById(1);
         var_dump($teacherOne);
 
-        $classArray = new CampusClassLoader();
-        $classOne = $classArray->getCampusClassById(1);
-        $classAllTest = $classArray->getAllCampusClasses();
-        var_dump($classOne);
-        var_dump($classAllTest);
         
 
         
 
-        require 'View/info.php';
+        require 'View/teacherpage.php';
     }
 }
 
