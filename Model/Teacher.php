@@ -3,22 +3,16 @@
 class Teacher extends Person
 {
     //properties
-    private int $teacherId;
+   
    
     
 
     //constructor
-    public function __construct($teacherIdi)
+    public function __construct($Name, $Email, $Id)
     {
-        parent::__construct($this->namu, $this->emailu);
-        $this->teacherId = $teacherIdi;
+        parent::__construct($Name, $Email, $Id);
+        
     }
 
-
-   
-    public function getTeacherId(): int
-    {
-        return $this->teacherId;
-    }
 }
 

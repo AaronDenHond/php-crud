@@ -3,7 +3,7 @@
 class Student extends Person
 {
     //properties
-    private int $studentId;
+   
     private int $classId;
     
 
@@ -11,19 +11,16 @@ class Student extends Person
     /**
      * !yo can I even do this in the constructor? Is this legal?
      */
-    public function __construct($studentIde, $classIde){
-     parent::__construct($this->namu, $this->emailu); //parent construct argument check!!!!
-     $this->studentId = $studentIde;
-     $this->classId = $classIde;
+    public function __construct($Name, $Email, int $Id, int $ClassId){
+     parent::__construct($Name, $Email, (int)$Id); //parent construct argument check!!!!
+     
+     $this->classId = $ClassId;
     }
 
 
 
     // getters 
-    public function getStudentId() : int
-    {
-        return $this->studentId;
-    }
+   
 
 
 

@@ -7,8 +7,14 @@ error_reporting(E_ALL);
 
 //include all your model files here
 require 'Model/Database.php';
+require 'Model/Person.php';
+require 'Model/Teacher.php';
+require 'Model/CampusClass.php';
 require 'Model/Student.php';
+require 'Model/TeacherLoader.php';
 require 'Model/StudentLoader.php';
+require 'Model/CampusClassLoader.php';
+
 //include all your controllers here
 require 'Controller/HomepageController.php';
 require 'Controller/InfoController.php';

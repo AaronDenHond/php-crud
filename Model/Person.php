@@ -4,12 +4,14 @@ class Person {
 //properties
     private string $name;
     private string $email;
+    private int $id;
 
 //constructor
-public function __construct($namu, $emailu) {
+public function __construct(string $Name, string $Email, int $Id) {
 
-    $this->name = $namu;
-    $this->email = $emailu;
+    $this->name = $Name;
+    $this->email = $Email;
+    $this->id = $Id;
 }
 
 //getters
@@ -23,6 +25,11 @@ public function getName()
 public function getEmail()
 {
     return $this->email;
+}
+
+public function getId() : int
+{
+    return $this->id;
 }
 
 }

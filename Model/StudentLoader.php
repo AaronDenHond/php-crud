@@ -14,7 +14,7 @@ public function __construct() {
 
     foreach($queriedAllStudents as $student) {
 
-        $this->allStudents = new Student( $student['studentId'], $student['name'], $student['email'], $student['classId']); 
+        $this->allStudents[] = new Student( (int)$student['name'], (string)$student['email'], (string)$student['studentId'], (int)$student['classId']); 
     }
 
 }
@@ -29,7 +29,7 @@ public function getAllStudents() {
 public function getStudentById($studentId) {
 
     foreach($this->allStudents as $student) {
-        if ($student['studentId'] === $studentId ) {
+        if ($student->getId() === $studentId ) {
 
             return $student;
         }
