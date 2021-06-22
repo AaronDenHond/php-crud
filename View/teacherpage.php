@@ -17,6 +17,11 @@
         echo '<br>';
     }
     ?>
-
+    <form action="" method="post">
+        ID: <input type="text" name="id"><br>
+        Name: <input type="text" name="name"><br>
+        E-mail: <input type="text" name="email"><br>
+        <input type="submit">
+    </form>
 </section>
 <?php require 'includes/footer.php' ?>

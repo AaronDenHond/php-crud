@@ -19,6 +19,8 @@
         echo '<br>';
         echo '<br>';
     }; ?>
+
+    
    
 </section>
 <?php require 'includes/footer.php' ?>
