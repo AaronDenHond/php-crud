@@ -19,12 +19,10 @@ How I interpret CRUD for this assignment :
 CREATE : be able to add teacher, student, class to the database.
 We’ll do this with a form and POST superglobal.
 READ: be able to read information.
-We’ll do this by querying our self-made database.
-UPDATE : no idea for now
-DELETE : no idea for now
-
-
-
+We’ll do this by querying our self-made database and displaying the information from said DB on the respective pages.
+DELETE : We do this via a delete button per row (1 row being 1 object teacher,campus class or student). By checking the value of the button and doing a
+DELETE FROM WHERE quere where we check if the ID we want to delete matches the one in the table we can delete rows.
+UPDATE : in progress
 
 
 Plan of attack :
@@ -52,8 +50,28 @@ Plan of attack :
 9. Make the other controllers.
         CHECK
 
-10. Start with the view/creating necessary pages in the view.
+
+10. View : start with the view/creating necessary pages in the view.
         CHECK
 
 11. Form to create data and store in DB on submit (POST/GET).
-IN PROGRESS
+        CHECK
+
+12. Forms per page to show relevant information.
+
+        CHECK
+
+13. Create functionality test and making sure it works for all tables
+
+       CHECK
+
+14. DELETE functionality for 1 and test
+
+       CHECK
+15. test DELETE functionality for all tables
+
+       CHECK
+
+16. UPDATE functionality
+
+in progress

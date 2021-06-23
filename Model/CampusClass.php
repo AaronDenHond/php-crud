@@ -65,3 +65,4 @@ return $this->teacherId;
 
 
 
+//value id gebruiken in logica, maar wij selecten een naam in input field
