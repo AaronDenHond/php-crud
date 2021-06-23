@@ -5,20 +5,18 @@ class StudentController {
 
     public function render(array $GET, array $POST) {
         //studentArray is an array filled with objects 
-        
-        if(isset($POST['name']) && isset($POST['email']) && isset($POST['classId'])) {
+        print_r($POST);
+        if(isset($POST['name']) && isset($POST['email']) && isset($POST['classId']) && isset($POST['create'])) {
             $name = $POST['name'];
             $email = $POST['email'];
-            $classId = $POST['classId'];
+            $classId = (int)$POST['classId'];
             $this->addStudent($name,$email,$classId);
             
         }
 
         elseif(isset($POST['delete'])) {
-            $name = $POST['name'];
-            $email = $POST['email'];
-            $classId = $POST['classId'];
-            $this->deleteStudent($name,$email,$classId);
+            //via $POST['delete'] krijgen we de student Id die we met de method in value krijgen
+            $this->deleteStudent($POST['delete']);
         }
 
         $studentRepo = new StudentLoader();
@@ -31,12 +29,12 @@ class StudentController {
 
     public function addStudent($name,$email,$classId) {
        $studentRepo = new StudentLoader();
-       $addedStudent = $studentRepo->addStudent($name,$email,$classId);
+       $studentRepo->addStudent($name,$email,$classId);
     }
 
-    public function deleteStudent($name,$email,$classId) {
+    public function deleteStudent($id) {
         $studentRepo = new StudentLoader();
-        $removedStudent = $studentRepo->deleteStudent($name,$email,$classId);
+        $removedStudent = $studentRepo->deleteStudent($id);
     }
 
 }

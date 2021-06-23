@@ -40,7 +40,7 @@ class StudentLoader
         }
     }
 
-    public function addStudent($name,$email,$classId) {
+    public function addStudent($name,$email, int $classId) {
         $connection = Database::openConnection();
         $handle = $connection->prepare('INSERT INTO student (name, email, classId) VALUES (:name,:email,:classId)');
         $handle->bindValue(':name',$name);
@@ -50,12 +50,10 @@ class StudentLoader
 
     }
 
-    public function deleteStudent($name,$email,$classId) {
+    public function deleteStudent($id) {
         $connection = Database::openConnection();
-        $handle = $connection->prepare('DELETE FROM student');
-        $handle->bindValue(':name',$name);
-        $handle->bindValue(':email',$email);
-        $handle->bindValue(':classId',$classId);
+        $handle = $connection->prepare('DELETE FROM student WHERE studentId = :id');   //which one is :id again?
+        $handle->bindValue(':id',$id);
         $handle->execute();
     }
 }

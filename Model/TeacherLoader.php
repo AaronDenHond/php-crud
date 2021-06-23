@@ -47,9 +47,8 @@ public function addTeacher($name, $email){
     /* $addTeacher = $handle->fetch(); */ 
     //no fetch needed ofc, we're not fetching data here
 
-
-
 }
+
 
 
 }
