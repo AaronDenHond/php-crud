@@ -15,13 +15,15 @@
         echo '</tr>';
         echo '<br>';
         echo '<br>';
+        
     }
     ?>
-    <form action="" method="post">
+    <form action="" method="post" id='form1'> 
         
         Name: <input type="text" name="name" id="name"><br>
         E-mail: <input type="text" name="email" id="email"><br>
-        <input type="submit">
+       
     </form>
+    <button type="submit" form="form1" value="create"> Create teacher </button>
 </section>
 <?php require 'includes/footer.php' ?>

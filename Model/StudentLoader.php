@@ -49,4 +49,13 @@ class StudentLoader
         $handle->execute();
 
     }
+
+    public function deleteStudent($name,$email,$classId) {
+        $connection = Database::openConnection();
+        $handle = $connection->prepare('DELETE FROM student');
+        $handle->bindValue(':name',$name);
+        $handle->bindValue(':email',$email);
+        $handle->bindValue(':classId',$classId);
+        $handle->execute();
+    }
 }

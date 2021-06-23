@@ -20,13 +20,14 @@
         echo '<br>';
     }; ?>
 
-<form action="" method="post">
+<form action="" method="post" id='form1'>
         
         Name: <input type="text" name="className" id="className"><br>
         Location: <input type="text" name="location" id="location"><br>
         Teacher ID: <input type="number" name="teacherId" id="teacherId"><br>
-        <input type="submit">
+        
     </form>
+    <button type="submit" form="form1" value="create"> Create campus class </button>
    
 </section>
 <?php require 'includes/footer.php' ?>

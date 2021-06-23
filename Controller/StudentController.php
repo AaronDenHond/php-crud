@@ -14,6 +14,13 @@ class StudentController {
             
         }
 
+        elseif(isset($POST['delete'])) {
+            $name = $POST['name'];
+            $email = $POST['email'];
+            $classId = $POST['classId'];
+            $this->deleteStudent($name,$email,$classId);
+        }
+
         $studentRepo = new StudentLoader();
         $studentOne = $studentRepo->getStudentById(1);
         $allStudents = $studentRepo->getAllStudents();
@@ -25,6 +32,11 @@ class StudentController {
     public function addStudent($name,$email,$classId) {
        $studentRepo = new StudentLoader();
        $addedStudent = $studentRepo->addStudent($name,$email,$classId);
+    }
+
+    public function deleteStudent($name,$email,$classId) {
+        $studentRepo = new StudentLoader();
+        $removedStudent = $studentRepo->deleteStudent($name,$email,$classId);
     }
 
 }
