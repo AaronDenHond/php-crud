@@ -28,9 +28,6 @@
         Class ID: <input type="number" name="classId" id="classId"><br>
 
     </form>
-    <button type="submit" form="form1" name='create' value="create"> Create student </button>
-
-
-
+    <button type="submit" form="form1" name='create' value=""> Create student </button>
 </section>
 <?php require 'includes/footer.php' ?>

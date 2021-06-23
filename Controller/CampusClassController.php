@@ -7,11 +7,17 @@ class CampusClassController
     public function render(array $GET, array $POST)
     {
 
-        if(isset($POST['className']) && isset($POST['location']) && isset($POST['teacherId'])) {
+        if(isset($POST['className']) && isset($POST['location']) && isset($POST['teacherId']) && isset($POST['create'])) {
                    $className = $POST['className'];
                    $location = $POST['location'];
                    $teacherId = $POST['teacherId'];
                    $this->addCampusClass($className,$location,$teacherId);
+        }
+
+        elseif(isset($POST['delete'])) {
+               
+              $this->deleteCampusClass($POST['delete']);
+
         }
         
         $classRepo = new CampusClassLoader();
@@ -28,5 +34,11 @@ class CampusClassController
             
         $campusClassRepo = new CampusClassLoader();
         $campusClassRepo->addCampusClass($className,$location,$teacherId);
+   }
+
+   public function deleteCampusClass($classId) {
+       $campusClassRepo = new CampusClassLoader();
+       $campusClassRepo->deleteCampusClass($classId);
+
    }
 }

@@ -49,6 +49,13 @@ public function addTeacher($name, $email){
 
 }
 
+public function deleteTeacher($id){
+$connection = Database::openConnection();
+$handle = $connection->prepare('DELETE FROM teacher WHERE teacherId = :id');
+$handle->bindValue(':id', $id);
+$handle->execute(); 
+
+}
 
 
 }

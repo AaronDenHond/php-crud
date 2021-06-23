@@ -12,7 +12,7 @@
                     <td><?php echo  $teacher->getId() ?></td>
                     <td><?php echo $teacher->getName() ?></td>
                     <td><?php echo $teacher->getEmail() ?></td>
-                    <td><?php echo $teacher->getClassId() ?> </td>
+                    
                     
                     <td><button name="delete" value="<?php echo $teacher->getId() ?>">Delete</button>
                     </td>
@@ -22,10 +22,10 @@
                 <?php } ?>;
         </table>
 
-
+ 
         Name: <input type="text" name="name" id="name"><br>
         E-mail: <input type="text" name="email" id="email"><br>
-        Class ID: <input type="number" name="classId" id="classId"><br>
+        
 
     </form>
     <button type="submit" form="form2" name='create' value="create"> Create teacher </button>

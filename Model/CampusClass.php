@@ -1,6 +1,6 @@
 <?php
 
-class campusClass {
+class CampusClass {
 private int $classId;
 private string $className;
 private string $location;

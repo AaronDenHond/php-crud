@@ -8,7 +8,7 @@ class TeacherController
     public function render(array $GET, array $POST)
     {
 
-        if (isset($POST['name']) && isset($POST['email'])) {
+        if (isset($POST['name']) && isset($POST['email']) && isset($POST['create'])) {
             /* $newTeacher = new Teacher($POST['name'], $POST['email'], $POST['id']); no need to make here, we do in loader*/
             $name = $POST['name'];
             $email = $POST['email'];
@@ -17,10 +17,14 @@ class TeacherController
              * ! issue was : codeflow, I added a new teacher AFTER getting all teachers
              */
         }
+
+        if (isset($POST['delete'])) {
+            $this->deleteTeacher($POST['delete']);
+      }
         $teacherRepo = new TeacherLoader();
         $teacherOne = $teacherRepo->getTeacherById(1);
         $allTeachers = $teacherRepo->getAllTeachers();
-
+      
 
 
         require 'View/teacherpage.php';
@@ -34,6 +38,12 @@ class TeacherController
         $teacherRepo = new TeacherLoader();
         $teacherRepo->addTeacher($name, $email);
     }
+   
+    public function deleteTeacher($id) {
+        $teacherRepo = new TeacherLoader();
+        $teacherRepo->deleteTeacher($id);
+    }
+
 }
 
 

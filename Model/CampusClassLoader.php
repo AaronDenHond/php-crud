@@ -46,5 +46,11 @@ public function addCampusClass($className,$location,$teacherId) {
     $handle->execute();
 }
 
+public function deleteCampusClass($classId) {
+    $connection = Database::openConnection();
+    $handle = $connection->prepare('DELETE FROM class WHERE classId = :classid');
+    $handle->bindValue(':classid', $classId);
+    $handle->execute();
+}
 
 }
