@@ -36,5 +36,15 @@ public function getCampusClassById($id) {
     }
 }
 
+public function addCampusClass($className,$location,$teacherId) {
+
+    $connection = Database::openConnection();
+    $handle = $connection->prepare('INSERT INTO class(className,location,teacherId) VALUES(:className,:location,:teacherId)');
+    $handle->bindValue(':className',$className);
+    $handle->bindValue(':location', $location);
+    $handle->bindValue(':teacherId', $teacherId);
+    $handle->execute();
+}
+
 
 }

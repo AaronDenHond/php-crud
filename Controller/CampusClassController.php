@@ -7,18 +7,26 @@ class CampusClassController
     public function render(array $GET, array $POST)
     {
 
+        if(isset($POST['className']) && isset($POST['location']) && isset($POST['teacherId'])) {
+                   $className = $POST['className'];
+                   $location = $POST['location'];
+                   $teacherId = $POST['teacherId'];
+                   $this->addCampusClass($className,$location,$teacherId);
+        }
         
-
-        $classArray = new CampusClassLoader();
-        $classOne = $classArray->getCampusClassById(1);
-        $allClasses = $classArray->getAllCampusClasses();
+        $classRepo = new CampusClassLoader();
+        $classOne = $classRepo->getCampusClassById(1);
+        $allClasses = $classRepo->getAllCampusClasses();
         
-        
-       
-        
-
         
 
         require 'View/campusclasspage.php';
     }
+
+    
+    public function addCampusClass($className,$location,$teacherId){
+            
+        $campusClassRepo = new CampusClassLoader();
+        $campusClassRepo->addCampusClass($className,$location,$teacherId);
+   }
 }

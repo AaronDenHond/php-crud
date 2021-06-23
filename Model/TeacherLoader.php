@@ -35,9 +35,7 @@ public function getTeacherById($teacherId) {
         }
     }
 }
-/**
- * ! issue was : codeflow, I added a new teacher AFTER getting all teachers
- */
+
 public function addTeacher($name, $email){
     
     $connection = Database::openConnection();
@@ -46,11 +44,10 @@ public function addTeacher($name, $email){
     $handle->bindValue(":name", $name);
     $handle->bindValue(":email", $email);
     $handle->execute();
-    /* $addTeacher = $handle->fetch(); */
+    /* $addTeacher = $handle->fetch(); */ 
+    //no fetch needed ofc, we're not fetching data here
 
-/**
- * TODO remove needing to input teacherid, should autoincrement so no need
- */
+
 
 }
 

@@ -8,11 +8,9 @@ class Student extends Person
     
 
     //constructor
-    /**
-     * !yo can I even do this in the constructor? Is this legal?
-     */
+    
     public function __construct(string $Name, string $Email, int $Id, int $ClassId){
-     parent::__construct($Name, $Email, (int)$Id); //parent construct argument check!!!!
+     parent::__construct($Name, $Email, (int)$Id); 
      
      $this->classId = $ClassId;
     }

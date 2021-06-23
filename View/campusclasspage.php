@@ -20,7 +20,13 @@
         echo '<br>';
     }; ?>
 
-    
+<form action="" method="post">
+        
+        Name: <input type="text" name="className" id="className"><br>
+        Location: <input type="text" name="location" id="location"><br>
+        Teacher ID: <input type="number" name="teacherId" id="teacherId"><br>
+        <input type="submit">
+    </form>
    
 </section>
 <?php require 'includes/footer.php' ?>
