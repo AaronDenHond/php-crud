@@ -1,5 +1,6 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
 
 class TeacherController
 {
@@ -7,18 +8,28 @@ class TeacherController
     public function render(array $GET, array $POST)
     {
 
-        
+        if (isset($POST['name']) && isset($POST['email'])) {
+            /* $newTeacher = new Teacher($POST['name'], $POST['email'], $POST['id']); no need to make here, we do in loader*/
+            $name = $POST['name'];
+            $email = $POST['email'];
+            $this->addTeacher($name,$email);
+            
+            
+        }
+        $teacherRepo = new TeacherLoader();
+        $teacherOne = $teacherRepo->getTeacherById(1);
+        $allTeachers = $teacherRepo->getAllTeachers();
+       
 
-        $teacherArray = new TeacherLoader();
-        $teacherOne = $teacherArray->getTeacherById(1);
-        $allTeachers = $teacherArray->getAllTeachers();
-        
-
-        
-
-        
 
         require 'View/teacherpage.php';
+    }
+    public function addTeacher($name, $email)
+    {
+
+        $teacherRepo = new TeacherLoader();
+        $teacherRepo->addTeacher($name, $email);
+       
     }
 }
 

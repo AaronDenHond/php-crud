@@ -1,7 +1,7 @@
 <?php
 
 class TeacherLoader {
-
+//loaderclasses brengen alles samen, samenvoegen van data in bruikbare objecten
     private array $allTeachers = [];
 
 
@@ -34,6 +34,24 @@ public function getTeacherById($teacherId) {
             return $teacher;
         }
     }
+}
+/**
+ * ! issue was : codeflow, I added a new teacher AFTER getting all teachers
+ */
+public function addTeacher($name, $email){
+    
+    $connection = Database::openConnection();
+    $handle = $connection->prepare('INSERT INTO teacher (name, email) VALUES (:name, :email)'); //INSERT INTO teacher (name, email) VALUES ('aaron', 'aar@on.com')
+    
+    $handle->bindValue(":name", $name);
+    $handle->bindValue(":email", $email);
+    $handle->execute();
+    /* $addTeacher = $handle->fetch(); */
+
+/**
+ * TODO remove needing to input teacherid, should autoincrement so no need
+ */
+
 }
 
 

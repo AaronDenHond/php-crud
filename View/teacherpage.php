@@ -18,9 +18,9 @@
     }
     ?>
     <form action="" method="post">
-        ID: <input type="text" name="id"><br>
-        Name: <input type="text" name="name"><br>
-        E-mail: <input type="text" name="email"><br>
+        
+        Name: <input type="text" name="name" id="name"><br>
+        E-mail: <input type="text" name="email" id="email"><br>
         <input type="submit">
     </form>
 </section>
