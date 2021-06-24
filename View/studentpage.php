@@ -23,11 +23,12 @@
         </table>
 
 
-        Name: <input type="text" name="name" id="name"><br>
-        E-mail: <input type="text" name="email" id="email"><br>
-        Class ID: <input type="number" name="classId" id="classId"><br>
+        <p>Name: <input type="text" name="name" id="name"><br></p>
+        <p>E-mail: <input type="text" name="email" id="email"><br></p>
+        </p>Class ID: <input type="number" name="classId" id="classId"><br></p>
 
     </form>
     <button type="submit" form="form1" name='create' value=""> Create student </button>
 </section>
+<br>
 <?php require 'includes/footer.php' ?>
