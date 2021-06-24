@@ -5,21 +5,29 @@
     <p><a href="index.php">Back to homepage</a></p>
     <form action="" method="post" id='form1'>
         <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>ClassID</th>
+
+            </tr>
             <?php
             //allStudents declared in controller! here we just echo/do simple foreach nothing else
             foreach ($allStudents as $student) { ?>
+
                 <tr>
                     <td><?php echo  $student->getId() ?></td>
                     <td><?php echo $student->getName() ?></td>
                     <td><?php echo $student->getEmail() ?></td>
                     <td><?php echo $student->getClassId() ?> </td>
-                    
+
                     <td><button name="delete" value="<?php echo $student->getId() ?>">Delete</button>
                     </td>
                     <td><button name="update" value="<?php echo $student->getId() ?>">Update</button>
                     </td>
                 </tr>
-                <?php } ?>
+            <?php } ?>
         </table>
 
 

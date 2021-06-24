@@ -74,4 +74,20 @@ Plan of attack :
 
 16. UPDATE functionality
 
-in progress
+    CHECK
+
+17. Check if core functionalities (Create,Read,Update,Delete) work for all 3 entities
+
+    CHECK
+
+18. Clean up HTML
+
+    CHECK
+
+19. Start on the edge cases
+    
+    IN PROGRESS
+
+20. overall info on mainpage
+
+    IN PROGRESS

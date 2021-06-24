@@ -5,6 +5,13 @@
     <p><a href="index.php">Back to homepage</a></p>
     <form action="" method="post" id='form1'>
         <table>
+        <tr>
+                <th>ClassID</th>
+                <th>ClassName</th>
+                <th>Location</th>
+                <th>TeacherID</th>
+
+            </tr>
             <?php
             //allStudents declared in controller! here we just echo/do simple foreach nothing else
             foreach ($allClasses as $campusclass) { ?>
@@ -25,16 +32,17 @@
 
         <p>Class Name:</p> <input type="text" name="className" id="className"><br>
         <p>Location:</p> <input type="text" name="location" id="location"><br>
-        
-        <p>Teacher Name:</p> 
-            <select name ='teacherId'>
+
+        <p>Teacher Name:</p>
+        <select name='teacherId'>
             <?php foreach ($allTeachers as $teacher) { ?>
-                <option  value ='<?php echo $teacher->getId()?>'> <?php echo $teacher->getName(); ?> </option>
+                <option value='<?php echo $teacher->getId() ?>'> <?php echo $teacher->getName(); ?> </option>
             <?php } ?>
-            </select>
+        </select>
 
     </form>
-    <button type="submit" form="form1" name='create' > Create campus class </button>
+    <br>
+    <button type="submit" form="form1" name='create'> Create campus class </button>
 </section>
 <br>
 <?php require 'includes/footer.php' ?>
