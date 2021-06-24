@@ -56,4 +56,15 @@ class StudentLoader
         $handle->bindValue(':id',$id);
         $handle->execute();
     }
+
+    public function updateStudentById($name,$email, int $classId, int $id) {
+
+        $connection = Database::openConnection();
+        $handle = $connection->prepare('UPDATE student SET name = :name, email = :email, classId = :classId WHERE studentId = :studentId');
+        $handle->bindValue(':name',$name);
+        $handle->bindValue(':email',$email);
+        $handle->bindValue(':classId',$classId);
+        $handle->bindValue(':studentId',$id);
+        $handle->execute();
+    }
 }

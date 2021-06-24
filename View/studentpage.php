@@ -19,7 +19,7 @@
                     <td><button name="update" value="<?php echo $student->getId() ?>">Update</button>
                     </td>
                 </tr>
-                <?php } ?>;
+                <?php } ?>
         </table>
 
 
