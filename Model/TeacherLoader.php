@@ -57,5 +57,14 @@ $handle->execute();
 
 }
 
+public function updateTeacherById($name,$email,int $id) {
+    $connection = Database::openConnection();
+    $handle = $connection->prepare('UPDATE teacher SET name = :name, email = :email WHERE teacherId = :teacherId');
+    $handle->bindValue(':name', $name);
+    $handle->bindValue(':email',$email);
+    $handle->bindValue(':teacherId', $id);
+    $handle->execute();
+}
+
 
 }

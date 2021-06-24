@@ -21,11 +21,18 @@ class TeacherController
         if (isset($POST['delete'])) {
             $this->deleteTeacher($POST['delete']);
       }
+
+      if (isset($POST['update'])) {
+        $name = $POST['name'];
+        $email = $POST['email'];
+        $id = $POST['update'];
+        $this->updateTeacher($name, $email, (int)$id);
+    }  
         $teacherRepo = new TeacherLoader();
         $teacherOne = $teacherRepo->getTeacherById(1);
         $allTeachers = $teacherRepo->getAllTeachers();
       
-
+         
 
         require 'View/teacherpage.php';
     }
@@ -42,6 +49,11 @@ class TeacherController
     public function deleteTeacher($id) {
         $teacherRepo = new TeacherLoader();
         $teacherRepo->deleteTeacher($id);
+    }
+
+    public function updateTeacher($name, $email, $id) {
+        $teacherRepo = new TeacherLoader();
+        $teacherRepo->updateTeacherById($name, $email, $id);
     }
 
 }

@@ -65,4 +65,6 @@ return $this->teacherId;
 
 
 
-//value id gebruiken in logica, maar wij selecten een naam in input field
+//TODO : value id gebruiken in logica, maar wij selecten een naam in input field
+//we selecteren een naam, MAAR sturen een id!
+//eerst values hardcoden, dan dynamisch maken

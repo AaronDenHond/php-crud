@@ -6,8 +6,8 @@ class CampusClassController
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render(array $GET, array $POST)
     {
-
-        if(isset($POST['className']) && isset($POST['location']) && isset($POST['teacherId']) && isset($POST['create'])) {
+        print_r($POST);
+        if(isset($POST['className']) && isset($POST['location']) && isset($POST['create'])) {
                    $className = $POST['className'];
                    $location = $POST['location'];
                    $teacherId = $POST['teacherId'];
@@ -20,10 +20,15 @@ class CampusClassController
 
         }
         
+        //CampusClassLoader is een blueprint van de database die we kunnen opvullen, pas als we methods gebruiken kunnen we 'opvullen' , van cookiecutter naar cookie
         $classRepo = new CampusClassLoader();
         $classOne = $classRepo->getCampusClassById(1);
         $allClasses = $classRepo->getAllCampusClasses();
         
+
+        $teacherRepo = new TeacherLoader();
+        $allTeachers = $teacherRepo->getAllTeachers();
+
         
 
         require 'View/campusclasspage.php';
