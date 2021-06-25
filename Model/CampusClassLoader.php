@@ -53,19 +53,24 @@ class CampusClassLoader
     public function deleteCampusClass($classId)
     {
         $connection = Database::openConnection();
+        $handle = $connection->prepare('UPDATE student SET classId = NULL WHERE classId = :classid');  //setting student classId to 0 after deleting class
+        $handle->bindValue(':classid', $classId);
+        $handle->execute();
+
         $handle = $connection->prepare('DELETE FROM class WHERE classId = :classid');
         $handle->bindValue(':classid', $classId);
         $handle->execute();
+        
     }
 
     public function updateCampusClass($className, $location, $teacherId, $id)
-    {  
+    {
         $connection = Database::openConnection();
         $handle = $connection->prepare('UPDATE class SET className = :className, location = :location, teacherId = :teacherId WHERE classId = :classId');
-        $handle->BindValue(':className',$className);
-        $handle->BindValue(':location',$location);
-        $handle->BindValue(':teacherId',$teacherId);
-        $handle->BindValue(':classId',$id);
+        $handle->BindValue(':className', $className);
+        $handle->BindValue(':location', $location);
+        $handle->BindValue(':teacherId', $teacherId);
+        $handle->BindValue(':classId', $id);
         $handle->execute();
     }
 }
