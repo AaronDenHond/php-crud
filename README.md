@@ -84,10 +84,13 @@ Plan of attack :
 
     CHECK
 
-19. Start on the edge cases
-    
-    IN PROGRESS
+19. Edge case 1
 
-20. overall info on mainpage
+    CHECK
+
+20. Edge case 2
+
+    CHECK
+21. Details button/pages
 
     IN PROGRESS
