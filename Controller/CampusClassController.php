@@ -61,3 +61,6 @@ class CampusClassController
      $campusClassRepo->updateCampusClass($className,$location,$teacherId,$id);
    }
 }
+
+
+//TODO add details button that brings you to new url with info of that entity, no overview page, details page
