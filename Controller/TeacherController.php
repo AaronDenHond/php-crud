@@ -19,7 +19,7 @@ class TeacherController
         }
 
         if (isset($POST['delete'])) {
-            $this->deleteTeacher($POST['delete']);
+            $teacherMessage = $this->deleteTeacher((int)$POST['delete']);
       }
 
       if (isset($POST['update'])) {

@@ -49,7 +49,7 @@ class StudentLoader
         $handle->execute();
 
     }
-
+   // we use ID in this assignment to update/delete stuff so could've named all functions deleteStudentById etc...
     public function deleteStudent($id) {
         $connection = Database::openConnection();
         $handle = $connection->prepare('DELETE FROM student WHERE studentId = :id');   //which one is :id again?

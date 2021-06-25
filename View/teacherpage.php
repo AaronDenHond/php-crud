@@ -4,6 +4,7 @@
 
     <p><a href="index.php">Back to homepage</a></p>
     <form action="" method="post" id='form2'>
+        
         <table>
             <tr>
                 <th>ID</th>
@@ -12,6 +13,11 @@
 
 
             </tr>
+            <div>
+            <?php if (isset($teacherMessage)) {
+                echo $teacherMessage;
+            } ?>
+        </div>
             <?php
             //allStudents declared in controller! here we just echo/do simple foreach nothing else
             foreach ($allTeachers as $teacher) { ?>

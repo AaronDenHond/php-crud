@@ -51,9 +51,24 @@ public function addTeacher($name, $email){
 
 public function deleteTeacher($id){
 $connection = Database::openConnection();
-$handle = $connection->prepare('DELETE FROM teacher WHERE teacherId = :id');
+$handle = $connection->prepare('SELECT * FROM class WHERE teacherId = :id');
 $handle->bindValue(':id', $id);
 $handle->execute(); 
+$idCheck = $handle->fetchAll();
+
+if(!$idCheck) {
+    echo 'Teacher is still assigned to a class.';
+}
+
+else {
+
+    
+    $handle = $connection->prepare('DELETE FROM teacher WHERE teacherId = :id');
+    $handle->bindValue(':id', $id);
+    $handle->execute(); 
+    
+
+}
 
 }
 
